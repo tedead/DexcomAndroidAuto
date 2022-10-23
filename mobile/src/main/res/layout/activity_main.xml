@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <WebView
+        android:id="@+id/web_browser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="535dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +23,10 @@
         android:id="@+id/btn_basic_inline_reply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/web_browser"
         android:layout_centerInParent="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginBottom="486dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="252dp"
         android:text="SHOW NOTIFICATION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -31,10 +36,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_basic_inline_reply"
-        android:layout_marginStart="153dp"
-        android:layout_marginBottom="419dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="168dp"
         android:text="Connect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.852" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import androidx.core.app.Person;
 import androidx.core.app.RemoteInput;
 import androidx.core.graphics.drawable.IconCompat;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.app.NotificationChannel;
 import android.app.NotificationChannelGroup;
 import android.app.NotificationManager;
@@ -17,23 +18,15 @@ import android.media.AudioAttributes;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
-import java.net.HttpURLConnection;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     Button btnBasicInlineReply;
     Button btnConnectDexcomG6;
+    WebView myWebView;
+
     private static NotificationManagerCompat sNotificationManager;
     private static final String CHANNEL_ID = "msg_01";
     private static final String CHANNEL_NAME = "Messages";
@@ -48,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myWebView = findViewById(R.id.web_browser);
+        myWebView.loadUrl("https://sandbox-api.dexcom.com/v2/oauth2/login?client_id=&redirect_uri=http://localhost&response_type=code&scope=offline_access");
 
         btnBasicInlineReply = (Button) findViewById(R.id.btn_basic_inline_reply);
         btnBasicInlineReply.setOnClickListener(this::onClick);
